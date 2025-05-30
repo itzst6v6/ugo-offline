@@ -25,5 +25,6 @@ app.get('/map_index.json', (req, res) => {
   });
 });
 app.use('/', express.static(path.join(__dirname, 'files')));
+app.use((req, res) => { res.status(404).send('404 Not Found'); });
 // start app
 app.listen(PORT);
